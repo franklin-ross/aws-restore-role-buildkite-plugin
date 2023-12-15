@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Store the original values of the AWS environment variables before the command
+# runs so that they can be restored later.
+
+set -o pipefail
+
+if [[ -n $AWS_ACCESS_KEY_ID ]]; then
+  export UNASSUME_ROLE_PLUGIN_OG_AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+fi
+if [[ -n $AWS_SECRET_ACCESS_KEY ]]; then
+  export UNASSUME_ROLE_PLUGIN_OG_AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+fi
+if [[ -n $AWS_SESSION_TOKEN ]]; then
+  export UNASSUME_ROLE_PLUGIN_OG_AWS_SESSION_TOKEN="${AWS_SESSION_TOKEN}"
+fi
+if [[ -n $AWS_REGION ]]; then
+  export UNASSUME_ROLE_PLUGIN_OG_AWS_REGION="${AWS_REGION}"
+fi
+if [[ -n $AWS_DEFAULT_REGION ]]; then
+  export UNASSUME_ROLE_PLUGIN_OG_AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION}"
+fi
