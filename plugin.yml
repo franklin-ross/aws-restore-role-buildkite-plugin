@@ -1,0 +1,6 @@
+name: AWS Unassume Role
+description: Unset IAM role environment variables after running command.
+author: https://github.com/franklin-ross
+requirements:
+configuration:
+  additionalProperties: false
