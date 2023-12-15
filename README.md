@@ -4,7 +4,7 @@ A [Buildkite plugin](https://buildkite.com/docs/agent/plugins) to unset IAM Role
 
 This is essentially the inverse of the [AWS Assume Role Plugin](https://github.com/cultureamp/aws-assume-role-buildkite-plugin), resetting the environment back to the default role for the build agent.
 
-This plugin should come early in your plugin list due to [Buildkite's decision to run pre-command hooks and post-command hooks in the same order](https://github.com/buildkite/agent/issues/1646). Remember that assuming a role happens before the command and restoring a role happens _after_ the command.
+This plugin should come early (probably first) in your plugin list due to [Buildkite's decision to run pre-command hooks and post-command hooks in the same order](https://github.com/buildkite/agent/issues/1646). Remember that assuming a role happens before the command and restoring a role happens _after_ the command.
 
 ## Example
 
