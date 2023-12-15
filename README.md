@@ -13,6 +13,9 @@ steps:
   - command: bin/ci-aws-thing
     plugins:
       - franklin-ross/aws-restore-role#HEAD: ~
+      # Without aws-restore-role, this plugin would use the default agent role
+      # in the pre-command hook and the example-role in the post-command hook.
+      - plugin-that-uses-aws-roles: ~
       - cultureamp/aws-assume-role#v0.1.0:
           role: "arn:aws:iam::123456789012:role/example-role"
 ```
